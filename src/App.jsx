@@ -1,8 +1,11 @@
+import Sidebar from "./sidebar";
+import MainContent from "./mainContent";
 function App() {
   return (
-    <>
-      <h1 className="text-red-500">Hell oworld</h1>
-    </>
+    <div className="flex flex-col lg:grid lg:flex-none lg:grid-cols-4 container mx-auto h-screen">
+      <Sidebar />
+      <MainContent />
+    </div>
   )
 }
 

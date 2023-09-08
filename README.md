@@ -1,8 +1,20 @@
-# React + Vite
+# Todo App: 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+#### imagine and create the ui as a whole
+#### break the ui as individual components 
+#### hierarchy of components: 
+app components : 
+    1. Sidebar
+        1.1 Profile Component
+        1.2 Status Component
+    2. Main Content
+        2.1 Header
+        2.2 Todos
+            2.2.1 Todos Header
+            2.2.2 Todos Body
+                2.2.2.1 Todo
 
-Currently, two official plugins are available:
+#### create a static version of the app
+![Alt text](image.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+#### add the dynamic data using hooks 
