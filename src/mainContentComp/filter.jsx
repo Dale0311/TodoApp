@@ -7,5 +7,5 @@ function Filter() {
         </div>
      );
 }
-
+    
 export default Filter;

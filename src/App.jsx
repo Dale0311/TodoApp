@@ -48,6 +48,10 @@ function App() {
   );
 }
 
-// added a modal
-// add a function that handlesTheAdd
+// added a modal, done
+// added a handleAdd, done
+
+// handle conditional render for todos, done
+// add a complete key for api, ongoing
+// create a logic that shows the check as solid if todo.complete is true,
 export default App;
