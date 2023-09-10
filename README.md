@@ -17,4 +17,4 @@ app components :
 #### create a static version of the app
 ![Alt text](image.png)
 
-#### add the dynamic data using hooks 
+#### add the dynamic data using hooks
