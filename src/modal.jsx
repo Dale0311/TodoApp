@@ -26,6 +26,8 @@ function Modal({ setShowModal, handleAdd }) {
               <input
                 type="text"
                 value={newTodo}
+                placeholder="title.."
+                className="p-1 border-2 focus:outline-blue-500 w-full"
                 onChange={(e) => {
                   setNewTodo(e.target.value);
                 }}
@@ -41,8 +43,11 @@ function Modal({ setShowModal, handleAdd }) {
                 Close
               </button>
               <button
-                className="bg-emerald-500 text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                className={`bg-emerald-500 text-white ${
+                  !newTodo ? " opacity-70" : "active:bg-emerald-600"
+                } font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150 disabled:cursor-not-allowed`}
                 type="button"
+                disabled={!newTodo}
                 onClick={() => {
                   handleAdd(newTodo);
                   setShowModal(false);

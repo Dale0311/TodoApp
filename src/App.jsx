@@ -104,6 +104,7 @@ function App() {
 // handleClick for delete todo, done
 // make the filter works, done
 // make the filter btns, active or not, done
+// make sidebar status component work, ongoing
 
 // bugs:
 // 1. addnewtask: add todo can be press without user input
@@ -111,5 +112,5 @@ function App() {
 // - if we have two todos(1 active 1 complete) and press active and decided to delete the todo
 //  it will show no todos but we have other todo
 
-// done fixing bug #2
+// done fixing bug #1, 2
 export default App;
