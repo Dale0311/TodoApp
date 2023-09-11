@@ -5,7 +5,7 @@ import Modal from "../modal";
 function Todos(props) {
   return (
     <div className="flex flex-col p-4 space-y-5">
-      <TodosHeader />
+      <TodosHeader setFilterType={props.setFilterType} />
       <TodosBody {...props} />
       <div className="text-right">
         <button
@@ -17,7 +17,9 @@ function Todos(props) {
           Add new task
         </button>
       </div>
-      {props.showModal && <Modal handleAdd={props.handleAdd} setShowModal={props.setShowModal} />}
+      {props.showModal && (
+        <Modal handleAdd={props.handleAdd} setShowModal={props.setShowModal} />
+      )}
     </div>
   );
 }

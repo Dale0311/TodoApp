@@ -3,10 +3,17 @@ import axios from "./utils/axiosInstance";
 import Sidebar from "./sidebar";
 import MainContent from "./mainContent";
 import date from "./utils/date";
+import filteredTodos from "./utils/filterTodos";
+
 function App() {
   const [todos, setTodos] = useState([]);
   const [showModal, setShowModal] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
+  const [filterType, setFilterType] = useState("default");
+
+  // filteredData
+  const filteredData = filteredTodos(todos, filterType);
+
   // add todo
   const handleAdd = async (title) => {
     const nextId = todos.length;
@@ -72,13 +79,14 @@ function App() {
     <div className="flex flex-col lg:grid lg:flex-none lg:grid-cols-4 container mx-auto h-screen">
       <Sidebar />
       <MainContent
-        todos={todos}
+        todos={filteredData}
         showModal={showModal}
         handleAdd={handleAdd}
         setShowModal={setShowModal}
         isLoading={isLoading}
         handleCompleteTodo={handleCompleteTodo}
         handleDeleteTodo={handleDeleteTodo}
+        setFilterType={setFilterType}
       />
     </div>
   );
@@ -93,5 +101,12 @@ function App() {
 // create a logic that shows the check as solid if todo.complete is true, done
 // handleClick for completed todo btn, done,
 // handleClick for delete todo, done
+// make the filter works, done
+// make the filter btns, active or not, ongoing
 
+// bugs:
+// 1. addnewtask: add todo can be press without user input
+// 2. filter
+// - if we have two todos(1 active 1 complete) and press active and decided to delete the todo
+//  it will show no todos but we have other todo.
 export default App;
