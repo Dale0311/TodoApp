@@ -21,9 +21,9 @@ function App() {
   // toggle complete todo
   const handleCompleteTodo = async (id, completed) => {
     try {
-      const UpdateTodo = todos.find((todo) => todo.id === id);
+      const updateTodo = todos.find((todo) => todo.id === id);
       const res = await axios.put(`/Todos/${id}`, {
-        ...UpdateTodo,
+        ...updateTodo,
         completed: !completed,
       });
       setTodos((todos) => {
@@ -33,6 +33,16 @@ function App() {
       });
     } catch (e) {
       alert("error: " + e.message);
+    }
+  };
+
+  // delete todo
+  const handleDeleteTodo = async (id) => {
+    try {
+      axios.delete(`/Todos/${id}`);
+      setTodos((todos) => todos.filter((todo) => todo.id !== id));
+    } catch (error) {
+      alert("error: " + error.message);
     }
   };
 
@@ -68,6 +78,7 @@ function App() {
         setShowModal={setShowModal}
         isLoading={isLoading}
         handleCompleteTodo={handleCompleteTodo}
+        handleDeleteTodo={handleDeleteTodo}
       />
     </div>
   );
@@ -81,5 +92,6 @@ function App() {
 // add a complete key for api, ongoing, done
 // create a logic that shows the check as solid if todo.complete is true, done
 // handleClick for completed todo btn, done,
-// handleClick for delete todo, ongoing to sleep LOL
+// handleClick for delete todo, done
+
 export default App;
