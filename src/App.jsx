@@ -7,8 +7,35 @@ function App() {
   const [todos, setTodos] = useState([]);
   const [showModal, setShowModal] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
+  // add todo
+  const handleAdd = async (title) => {
+    const nextId = todos.length;
+    const newTodo = { id: nextId, title: title, date: date() };
+    try {
+      const res = await axios.post("/Todos", newTodo);
+      setTodos((oldTodos) => [...oldTodos, res.data]);
+    } catch {
+      console.log("error");
+    }
+  };
+  // toggle complete todo
+  const handleCompleteTodo = async (id, completed) => {
+    try {
+      const UpdateTodo = todos.find((todo) => todo.id === id);
+      const res = await axios.put(`/Todos/${id}`, {
+        ...UpdateTodo,
+        completed: !completed,
+      });
+      setTodos((todos) => {
+        return todos.map((todo) => {
+          return todo.id === id ? res.data : todo;
+        });
+      });
+    } catch (e) {
+      alert("error: " + e.message);
+    }
+  };
 
- 
   // intial fetch
   useEffect(() => {
     let ignore = false;
@@ -30,16 +57,6 @@ function App() {
       ignore = true;
     };
   }, []);
-  const handleAdd = async (title) => {
-    const nextId = todos.length;
-    const newTodo = { id: nextId, title: title, date: date() };
-    try {
-      const res = await axios.post("/Todos", newTodo);
-      setTodos((oldTodos) => [...oldTodos, res.data]);
-    } catch {
-      console.log("error");
-    }
-  };
 
   return (
     <div className="flex flex-col lg:grid lg:flex-none lg:grid-cols-4 container mx-auto h-screen">
@@ -50,6 +67,7 @@ function App() {
         handleAdd={handleAdd}
         setShowModal={setShowModal}
         isLoading={isLoading}
+        handleCompleteTodo={handleCompleteTodo}
       />
     </div>
   );
@@ -62,5 +80,6 @@ function App() {
 // handle loading, has todos and no todos ui, done
 // add a complete key for api, ongoing, done
 // create a logic that shows the check as solid if todo.complete is true, done
-// handleClick for completed todo btn, ongoing
+// handleClick for completed todo btn, done,
+// handleClick for delete todo, ongoing to sleep LOL
 export default App;
