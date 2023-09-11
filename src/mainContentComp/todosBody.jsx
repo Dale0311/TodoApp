@@ -2,13 +2,28 @@
 import Todo from "./todo";
 import Loading from "../loading";
 import NoTodos from "../noTodos";
-function TodosBody({ todos, isLoading }) {
+function TodosBody({ todos, isLoading, setShowModal }) {
   const arrTodos = todos.map((todo) => {
-    return <Todo key={todo.id} title={todo.title} date={todo.date} />;
+    return (
+      <Todo
+        key={todo.id}
+        title={todo.title}
+        completed={todo.completed}
+        date={todo.date}
+      />
+    );
   });
   const todosLength = arrTodos.length;
   return (
-    <>{isLoading ? <Loading /> : todosLength < 1 ? <NoTodos /> : arrTodos}</>
+    <>
+      {isLoading ? (
+        <Loading />
+      ) : todosLength < 1 ? (
+        <NoTodos setShowModal={setShowModal} />
+      ) : (
+        arrTodos
+      )}
+    </>
   );
 }
 

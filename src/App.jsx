@@ -60,6 +60,7 @@ function App() {
 
 // handle conditional render for todos, done
 // handle loading, has todos and no todos ui, done
-// add a complete key for api, ongoing
-// create a logic that shows the check as solid if todo.complete is true,
+// add a complete key for api, ongoing, done
+// create a logic that shows the check as solid if todo.complete is true, done
+// handleClick for completed todo btn, ongoing
 export default App;
