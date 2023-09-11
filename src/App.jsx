@@ -87,6 +87,7 @@ function App() {
         handleCompleteTodo={handleCompleteTodo}
         handleDeleteTodo={handleDeleteTodo}
         setFilterType={setFilterType}
+        filterType={filterType}
       />
     </div>
   );
@@ -102,7 +103,7 @@ function App() {
 // handleClick for completed todo btn, done,
 // handleClick for delete todo, done
 // make the filter works, done
-// make the filter btns, active or not, ongoing
+// make the filter btns, active or not, done
 
 // bugs:
 // 1. addnewtask: add todo can be press without user input

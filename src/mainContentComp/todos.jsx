@@ -5,7 +5,10 @@ import Modal from "../modal";
 function Todos(props) {
   return (
     <div className="flex flex-col p-4 space-y-5">
-      <TodosHeader setFilterType={props.setFilterType} />
+      <TodosHeader
+        setFilterType={props.setFilterType}
+        filterType={props.filterType}
+      />
       <TodosBody {...props} />
       <div className="text-right">
         <button
