@@ -77,7 +77,7 @@ function App() {
 
   return (
     <div className="flex flex-col lg:grid lg:flex-none lg:grid-cols-4 container mx-auto h-screen">
-      <Sidebar />
+      <Sidebar todos={todos} />
       <MainContent
         todos={filteredData}
         showModal={showModal}
@@ -104,7 +104,7 @@ function App() {
 // handleClick for delete todo, done
 // make the filter works, done
 // make the filter btns, active or not, done
-// make sidebar status component work, ongoing
+// make sidebar status component work, done
 
 // bugs:
 // 1. addnewtask: add todo can be press without user input
@@ -113,4 +113,8 @@ function App() {
 //  it will show no todos but we have other todo
 
 // done fixing bug #1, 2
+
+// done!!!
+
+// what it can do?
 export default App;
