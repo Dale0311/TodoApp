@@ -2,10 +2,17 @@
 import Todo from "./todo";
 import Loading from "../loading";
 import NoTodos from "../noTodos";
-function TodosBody({ todos, isLoading, setShowModal, handleCompleteTodo, handleDeleteTodo }) {
+function TodosBody({
+  todos,
+  isLoading,
+  setShowModal,
+  handleCompleteTodo,
+  handleDeleteTodo,
+  filterType,
+}) {
   const arrTodos = todos.map((todo) => {
     return (
-    <Todo
+      <Todo
         id={todo.id}
         key={todo.id}
         title={todo.title}
@@ -22,7 +29,7 @@ function TodosBody({ todos, isLoading, setShowModal, handleCompleteTodo, handleD
       {isLoading ? (
         <Loading />
       ) : todosLength < 1 ? (
-        <NoTodos setShowModal={setShowModal} />
+        <NoTodos setShowModal={setShowModal} filterType={filterType} />
       ) : (
         <ul>{arrTodos}</ul>
       )}
