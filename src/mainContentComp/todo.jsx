@@ -11,8 +11,8 @@ function Todo({
   handleDeleteTodo,
 }) {
   return (
-    <li className="mt-5 flex items-center text-2xl space-x-8 mx-5">
-      <div className="space-x-4">
+    <li className="mt-5 flex items-center text-2xl space-x-4 border-t md:space-x-8 mx-5">
+      <div className="space-x-2 md:space-x-4 flex">
         <button className="space-x-2" onClick={() => handleDeleteTodo(id)}>
           {" "}
           <FontAwesomeIcon

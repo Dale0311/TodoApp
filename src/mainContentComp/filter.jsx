@@ -1,10 +1,10 @@
 /* eslint-disable react/prop-types */
 function Filter({ setFilterType, filterType }) {
   return (
-    <div className="space-x-2 lg:space-x-10">
+    <div className="space-x-2 lg:space-x-10 flex">
       {/* default btn */}
       <button
-        className={`relative inline-flex items-center px-6 py-1 overflow-hidden text-lg font-medium ${
+        className={`relative inline-flex items-center px-4 md:px-6 py-1 overflow-hidden md:text-lg font-medium ${
           filterType === "default"
             ? "bg-indigo-600 text-white"
             : " text-indigo-600 hover:text-white hover:bg-gray-50"
@@ -20,7 +20,7 @@ function Filter({ setFilterType, filterType }) {
       </button>
       {/* completed btn */}
       <button
-        className={`relative inline-flex items-center px-6 py-1 overflow-hidden text-lg font-medium ${
+        className={`relative inline-flex items-center px-4 md:px-6  py-1 overflow-hidden text-lg font-medium ${
           filterType === "completed"
             ? "bg-indigo-600 text-white"
             : " text-indigo-600 hover:text-white hover:bg-gray-50"
@@ -35,7 +35,7 @@ function Filter({ setFilterType, filterType }) {
         <span className="relative">Completed</span>
       </button>
       <button
-        className={`relative inline-flex items-center px-6 py-1 overflow-hidden text-lg font-medium ${
+        className={`relative inline-flex items-center px-4 md:px-6  py-1 overflow-hidden text-lg font-medium ${
           filterType === "active"
             ? "bg-indigo-600 text-white"
             : " text-indigo-600 hover:text-white hover:bg-gray-50"

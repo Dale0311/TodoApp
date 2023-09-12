@@ -38,4 +38,4 @@ app components :
 2. i learn how to perform crud using axios
 3. how to use a loading state to a component when fetching
 4. how to filter data using onclick state and filter fn.
-5. dark mode tbf haha
+5. dark mode TBA haha

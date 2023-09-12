@@ -12,7 +12,7 @@ function Todos(props) {
       <TodosBody {...props} />
       <div className="text-right">
         <button
-          className="py-4 px-8 bg-blue-400 text-white hover:bg-blue-500 rounded font-semibold"
+          className="w-full py-2 px-4 md:py-4 md:px-8 md:w-auto bg-blue-400 text-white hover:bg-blue-500 rounded font-semibold"
           onClick={() => {
             props.setShowModal(true);
           }}

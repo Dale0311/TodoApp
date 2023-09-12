@@ -116,5 +116,5 @@ function App() {
 
 // done!!!
 
-// what it can do?
+// done making it responsive
 export default App;
